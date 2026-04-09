@@ -1,0 +1,67 @@
+body {
+  /*cuerpo de la pagina*/
+  background-color: black; /*color de fondo*/
+  margin: 0; /*elimina el espacio entre los elementos*/
+  padding: 20px; /*espacio entre el contenido y el borde del cuerpo*/
+}
+/*clase para el carousel*/
+.carousel {
+  /*clase para el carousel*/
+  position: relative; /*posiciona el carousel en relación al cuerpo*/
+  width: 100%; /*ancho del carousel*/
+  max-width: 1200px; /*ancho maximo del carousel*/
+  margin: 0 auto; /*centra el carousel*/
+  overflow: hidden; /*oculta el contenido que no se muestra*/
+  border-radius: 10px; /*borde redondeado del carousel*/
+}
+/*clase para el contenedor del carousel*/
+.carousel-container {
+  display: flex; /*hace que el carousel se muestre como fila*/
+  flex-wrap: nowrap; /*hace que el carousel se muestre como fila*/
+  transition: transform 0.5s ease-in-out; /*hace que el carousel se mueva fluidamente*/
+  width: 100%; /*ancho del carousel*/
+}
+/*clase para el slide del carousel*/
+.slide {
+  flex: 0 0 100%; /*hace que el carousel se mueva en la misma fila*/
+  min-width: 100%; /*ancho minimo del carousel*/
+  box-sizing: border-box; /*hace que el carousel se mueva en la misma fila*/
+}
+/*clase para las imagenes del slide*/
+.slide img {
+  width: 100%; /*ancho del slide*/
+  height: auto; /*alto del slide*/
+  display: block; /*oculta el contenido que no se muestra*/
+  justify-content: center; /*centra el slide*/
+  align-items: center; /*centra el slide*/
+}
+/*BOTONES*/
+.izquierda,
+.derecha {
+  position: absolute; /*posiciona el boton en relación al carousel*/
+  top: 50%; /*centra el boton en la mitad del carousel*/
+  transform: translateY(-50%); /*hace que el boton se mueva en la misma fila*/
+  background-color: transparent; /*oculta el boton*/
+  border: none; /*oculta el boton*/
+  font-size: 28px; /*tamaño del boton*/
+  width: 50px; /*ancho del boton*/
+  height: 50px; /*alto del boton*/
+  cursor: pointer; /*hace que el boton se mueva en la misma fila*/
+  z-index: 10; /*sobrepone el botn encima de las imagenes*/
+  border-radius: 50%; /*borde redondeado del boton*/
+  align-items: center; /*centra el boton*/
+  justify-content: center; /*centra el boton*/
+}
+/*posiciona el boton a la izquierda*/
+.izquierda {
+  left: 15px; /*posiciona el boton a la izquierda*/
+}
+/*posiciona el boton a la derecha*/
+.derecha {
+  right: 15px; /*posiciona el boton a la derecha*/
+}
+/*color de fondo del boton y animacion*/
+.izquierda:hover,
+.derecha:hover {
+  background-color: pink; /*color de fondo del boton*/
+}
