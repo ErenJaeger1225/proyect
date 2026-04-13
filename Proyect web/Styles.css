@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://static5.depositphotos.com/1003494/456/i/450/depositphotos_4564054-stock-photo-golden-artistic-fabric-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    
+    /* === IMPORTANTE PARA QUE EL FOOTER QUEDE ABAJO === */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVEGACIÓN */
+.main-nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(62, 39, 35, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Logo-img {
+    height: 55px;
+    width: auto;
+}
+
+.Logo {
+    color: #EBB866;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.main-ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.main-ul li a {
+    display: block;
+    padding: 14px 18px;
+    color: #EBB866;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.main-ul li a:hover {
+    background-color: rgba(235, 184, 102, 0.2);
+    color: white;
+}
+
+/* ====================== CONTENIDO (NUEVO) ====================== */
+
+.content {
+    flex: 1;                    /* Empuja el footer hacia abajo */
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Título grande */
+.title {
+    font-size: 3.2rem;
+    color: #3E2723;
+    margin-bottom: 25px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Subtítulo */
+.subtitle {
+    text-align: center;
+    color: #5D4037;
+    margin: 30px 0 15px;
+    font-size: 1.8rem;
+}
+
+/* Párrafo */
+.paragraph {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #4A3728;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ====================== FOOTER ====================== */
+
+.footer {
+    margin-top: auto;          
+    background-color: #3E2723;
+    color: #EBB866;
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 12px;
+}
+
+.footer-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-ul a {
+    color: #EBB866;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .main-ul {
+        margin-top: 15px;
+    }
+    
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .content {
+        margin: 50px auto;
+    }
+}
+
+.container-email {
+    display: flex;
+    justify-content: center;
+}
