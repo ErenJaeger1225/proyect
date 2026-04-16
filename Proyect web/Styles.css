@@ -168,3 +168,141 @@ body {
     display: flex;
     justify-content: center;
 }
+/* ==================== CARRUSEL ACOPLADO Y RESPONSIVE ==================== */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: nowrap; /* Por defecto en escritorio van de lado */
+    text-align: left; /* Alinea la descripción a la izquierda */
+    padding: 0 20px;
+}
+
+.carousel-container {
+    position: relative; /* CRUCIAL: Los botones se posicionan respecto a esto */
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1.6; /* La imagen ocupa más espacio */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* Eliminé el padding interno para que la imagen llegue al borde */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 450px; /* Altura fija para uniformidad en escritorio */
+    display: block;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+}
+
+/* --- BOTONES (ENCIMA DE LA IMAGEN) --- */
+.izquierda, .derecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(235, 184, 102, 0.8); /* Semi-transparente */
+    color: #3E2723;
+    border: none;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10; /* Asegura que estén arriba de la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+/* Posiciones dentro del container de la imagen */
+.izquierda { left: 15px; }
+.derecha { right: 15px; } 
+
+.izquierda:hover, .derecha:hover {
+    background-color: rgba(62, 39, 35, 0.9);
+    color: #EBB866;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Descripción al lado */
+.descripcion {
+    flex: 1;
+    background-color: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid #EBB866;
+}
+
+.description {
+    font-size: 1.15rem;
+    color: #4A3728;
+    line-height: 1.8;
+}
+
+/* ============================== RESPONSIVE TOTAL ============================== */
+
+/* Tablets y Laptops pequeñas */
+@media (max-width: 1024px) {
+    .slide img {
+        height: 350px; /* Reducimos altura de imagen */
+    }
+}
+
+/* Móviles (Vertical) */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .Logo { font-size: 1.5rem; }
+    
+    .title { font-size: 2.5rem; }
+
+    .carousel-wrapper {
+        flex-direction: column; /* IMAGEN ARRIBA, DESCRIPCIÓN ABAJO */
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .slide img {
+        height: 250px; /* Altura más pequeña para móviles */
+        border-radius: 15px;
+    }
+
+    /* Botones más pequeños en móvil */
+    .izquierda, .derecha {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        background-color: rgba(235, 184, 102, 0.9); /* Más opaco */
+    }
+    
+    .descripcion {
+        width: 100%;
+        margin-top: 10px;
+        padding: 20px;
+        border-left: none;
+        border-top: 5px solid #EBB866; /* Cambio de borde */
+    }
+}
